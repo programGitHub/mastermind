@@ -1,6 +1,11 @@
 import Link from 'components/Link';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography';
+
+interface Props {
+  n: number
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 /**
  * Success
  */
-const Success = () => {
+const Success = ({ n }: Props) => {
   const classes = useStyles();
 
   return (
@@ -23,7 +28,7 @@ const Success = () => {
         paragraph
         variant="h5"
       >
-        Bravo!
+        Bravo! ({ n })
       </Typography>
 
       <Typography align="center" variant="body2">
@@ -32,5 +37,9 @@ const Success = () => {
     </>
   );
 };
+
+Success.propTypes = {
+
+}
 
 export default Success;

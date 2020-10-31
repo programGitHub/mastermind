@@ -96,7 +96,7 @@ const Game = ({ solution }: Props) => {
       ))}
 
       {state.success ? (
-        <Success />
+        <Success n={state.history.length} />
       ) : (
         <Line>
           <Code onChange={handleChange} value={state.code} />
